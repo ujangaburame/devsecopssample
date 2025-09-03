@@ -1,0 +1,23 @@
+name: Test GitHub Action
+
+# Trigger: jalan tiap kali push ke main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello-job:               # nama job
+    runs-on: ubuntu-latest # runner OS
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3  # ambil kode repo
+
+      - name: Say Hello
+        run: echo "Hello, Bayu! Running GitHub Actions"
+
+      - name: Show current directory
+        run: pwd
+
+      - name: List repo files
+        run: ls -la
